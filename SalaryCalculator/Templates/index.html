@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salary Discount Calculate</title>
+    <!-- estylos Css Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark" style="background-color:#49BEB7; margin-bottom: 5rem;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Salary Discount Calculate</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section>
+        <form action="results" id="form" class="form-gruop">
+          <fieldset class="form-gruop">
+            <legend class="form-legend" style="background-color:#AFFFDF ;">Calculate wages</legend>
+          </fieldset>
+
+          <div class="row">
+            <dir class="col12">
+              <label class="form-label">Monthly Slary(in DOP)</label>
+              <input type="number" class="form-control" required placeholder="Monthly Slary" name="Monthly_Slary" />
+              <label class="form-label">Bonifications(in DOP)</label>
+              <input type="number" class="form-control" required placeholder="Bonifications" name="Bonifications" />
+              <label class="form-label">Extra Hours(in DOP)</label>
+              <input type="number" class="form-control" required placeholder="Extra Hours" name="Extra_Hours" />
+
+              <button class="btn" style="background-color:#FC345C; margin-top: 1rem;" type="submit">Calculate</button>
+            </dir>
+          </div>
+        </form>
+        <div class="reusls">
+          <p class="title">Results</p>
+          {% block contents %}
+
+          {% endblock %}
+        </div>
+      </section>
+    </main>
+    <!-- Js de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+  </body>
+
+  <!-- estilos de la aplicasion web al ser una sola pagina los decidi hacerlo de esta manera -->
+  <style>
+    /* Estylos para ocultar los botones de los input type numeros */
+    input[type='number']::-webkit-inner-spin-button,
+    input[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    section {
+      flex-wrap: wrap;
+      display: flex;
+      padding: 8px;
+    }
+    
+    section .reusls {
+      margin-left: 6rem;
+      width: 25rem;
+    }
+    
+    section .reusls .title {
+      text-align: center;
+      background-color: #49beb7;
+      padding: 8px;
+      border-radius: 5px;
+      margin-top: 0.8rem;
+      font-size: 1.4rem;
+    }
+    
+    section .reusls ul {
+      list-style: none;
+      position: relative;
+      right: 1rem;
+    }
+    
+    section .reusls ul li {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px;
+      border: 1px solid #49beb7;
+    }
+    
+    form {
+      border-radius: 15px;
+      padding: 12px;
+      width: 25rem;
+    }
+    
+    form legend {
+      margin-bottom: rem;
+      padding: 8px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 990px){
+      section .reusls{
+        margin-left: 0px;
+      }
+
+    }
+
+  </style>
+</html>
